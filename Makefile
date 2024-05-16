@@ -33,12 +33,14 @@ BUILD       	:=  build
 LIBBUTANO   	:=  ../butano/butano
 PYTHON      	:=  python
 SOURCES     	:=  src
-INCLUDES    	:=  include
+INCLUDES    	:=  $(BUILD)
 DATA        	:=
-GRAPHICS    	:=  graphics
+GRAPHICS    	:=  graphics $(BUILD)/fonts
 AUDIO       	:=  audio
-DMGAUDIO    	:=  dmg_audio
+FONTS       	:=  fonts/HanaMin fonts/Unifont fonts/BabelStoneHan fonts/SourceHanSerif/JP fonts/SourceHanSans/JP fonts/SourceHanMono/JP fonts/WQYZenHei fonts/WQYMicroHei fonts/Unscii
+DMGAUDIO   		:=  dmg_audio
 ROMTITLE    	:=  ROM TITLE
+TEXTS       	:=  src/main.cpp
 ROMCODE     	:=  SBTP
 USERFLAGS   	:=  
 USERCXXFLAGS	:=  
@@ -49,7 +51,7 @@ USERLIBS    	:=
 DEFAULTLIBS 	:=  
 STACKTRACE		:=	
 USERBUILD   	:=  
-EXTTOOL     	:=  
+EXTTOOL     	:=  $(PYTHON) tools/butano/butano_fonts_tool.py --build=$(BUILD) --fonts="$(FONTS)" --texts="$(TEXTS)"
 
 #---------------------------------------------------------------------------------------------------------------------
 # Export absolute butano path:
