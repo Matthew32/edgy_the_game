@@ -20,6 +20,7 @@
 #include "source_han_mono_jp_sprite_font.h"
 #include "wqy_zenhei_sprite_font.h"
 #include "wqy_microhei_sprite_font.h"
+#include "bn_rect.h"
 
 namespace
 {
@@ -29,14 +30,7 @@ namespace
         text_generator.set_center_alignment();
 
         bn::vector<bn::sprite_ptr, 128>text_sprites;
-        text_generator.generate(0, -68, "- HanaMin / 花園明朝 / 花园宋体 -", text_sprites);
-        text_generator.generate(0, -48, "English Français русский язык", text_sprites);
-        text_generator.generate(0, -28, "简体中文 繁體中文（台灣）", text_sprites);
-        text_generator.generate(0, -8, "繁體中文（香港）Монголхэл", text_sprites);
-        text_generator.generate(0, 12, "日本語（にほんご）𫝀𫠫𬺰𬺱", text_sprites);
-        text_generator.generate(0, 32, "Tiếng Việt ภาษาไทย", text_sprites);
-        text_generator.generate(0, 52, "Македонски Ўзбекча", text_sprites);
-        text_generator.generate(0, 72, "☺♨➑☆★♡✂♪♫☑", text_sprites);
+        text_generator.generate(0, 72, "- Test matthew -", text_sprites);
 
         while(! bn::keypad::start_pressed())
         {
@@ -221,31 +215,10 @@ int main()
 
     while(true)
     {
+        // Clear background
+        rect = bn::rect(0, 0, 150, 140);
+        
         hanamin_text_scene();
-        bn::core::update();
-
-        unifont_text_scene();
-        bn::core::update();
-
-        unscii_text_scene();
-        bn::core::update();
-
-        babelstone_han_text_scene();
-        bn::core::update();
-
-        source_han_serif_text_scene();
-        bn::core::update();
-
-        source_han_sans_text_scene();
-        bn::core::update();
-
-        source_han_mono_text_scene();
-        bn::core::update();
-
-        wqy_zenhei_text_scene();
-        bn::core::update();
-
-        wqy_microhei_text_scene();
         bn::core::update();
     }
 }
