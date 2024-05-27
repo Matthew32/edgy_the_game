@@ -1,4 +1,7 @@
 template.*
+*.elf
+*.gba
+*.sav
 /build
 /.vscode
 /tools/butano/__pycache__

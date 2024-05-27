@@ -213,11 +213,12 @@ int main()
 
     bn::bg_palettes::set_transparent_color(bn::color(16, 0, 0));
 
-    while(true)
+    while (true)
     {
         // Clear background
-        rect = bn::rect(0, 0, 150, 140);
-        
+        bn::rect(0, 0, 150, 140);
+        // Draw a filled rectangle at position (10, 20) with size (50, 30) and color (255, 255, 0)
+       // bn::rect(10, 20, 50, 30).draw(bn::color(255, 255, 0));
         hanamin_text_scene();
         bn::core::update();
     }
