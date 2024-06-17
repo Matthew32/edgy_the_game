@@ -14,7 +14,7 @@
 #include "hanamin_sprite_font.h"
 #include "source_han_serif_jp_sprite_font.h"
 #include "bn_rect.h"
-#include "hanamin.cpp"
+#include "edgy_hanamin.h"
 
 namespace
 {
@@ -46,14 +46,14 @@ int main()
     bn::core::init();
 
     bn::bg_palettes::set_transparent_color(bn::color(16, 0, 0));
-
+    edgy::hanamin hanamin;
     while (true)
     {
         // Clear background
         bn::rect(0, 0, 150, 140);
         // Draw a filled rectangle at position (10, 20) with size (50, 30) and color (255, 255, 0)
         // bn::rect(10, 20, 50, 30).draw(bn::color(255, 255, 0));
-        hanamin::text_scene("Add new text");
+        hanamin.text_scene("Add new text");
         bn::core::update();
     }
 }
