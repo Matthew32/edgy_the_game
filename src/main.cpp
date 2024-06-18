@@ -3,22 +3,10 @@
  * zlib License, see LICENSE file.
  */
 
-#include "bn_core.h"
-#include "bn_math.h"
-#include "bn_keypad.h"
-#include "bn_sprite_ptr.h"
-#include "bn_bg_palettes.h"
-#include "bn_string_view.h"
-#include "bn_sprite_text_generator.h"
-
-#include "hanamin_sprite_font.h"
-#include "source_han_serif_jp_sprite_font.h"
-#include "bn_rect.h"
-#include "edgy_hanamin.h"
+#include "edgy_game_loop.h"
 
 namespace
 {
-
     void source_han_serif_text_scene()
     {
         bn::sprite_text_generator text_generator(source_han_serif_jp_sprite_font);
@@ -43,17 +31,8 @@ namespace
 
 int main()
 {
-    bn::core::init();
+    edgy::game_loop game_loop;
 
-    bn::bg_palettes::set_transparent_color(bn::color(16, 0, 0));
-    edgy::hanamin hanamin;
-    while (true)
-    {
-        // Clear background
-        bn::rect(0, 0, 150, 140);
-        // Draw a filled rectangle at position (10, 20) with size (50, 30) and color (255, 255, 0)
-        // bn::rect(10, 20, 50, 30).draw(bn::color(255, 255, 0));
-        hanamin.text_scene("Add new text");
-        bn::core::update();
-    }
+    game_loop.start();
+    game_loop.loop();
 }
