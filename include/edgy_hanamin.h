@@ -10,7 +10,7 @@ namespace edgy
         {
         }
 
-        void text_scene(char *text);
+        void text_scene(const char *text);
     };
 };
 #endif
