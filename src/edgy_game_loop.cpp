@@ -11,6 +11,7 @@
 #include "bn_rect.h"
 #include "edgy_hanamin.h"
 #include "edgy_background.h"
+#include "edgy_sprite.h"
 #include "edgy_visual.h"
 
 namespace edgy
@@ -42,6 +43,8 @@ namespace edgy
     {
         edgy::hanamin hanamin;
         bn::regular_bg_ptr regular_bg = bn::regular_bg_items::background.create_bg(0, 20);
+        bn::sprite_ptr sprite_palette = bn::sprite_items::sprite.create_sprite(0, 0);
+
         while (true)
         {
             // Clear background
