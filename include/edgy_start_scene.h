@@ -5,8 +5,11 @@ namespace edgy
 {
     class start_scene
     {
-        public:
-        void scene();
+    public:
+        const char *dialog[2] = {"text1", "text2"};
+        int selectedText = 0;
+
+        const char *scene();
         void nextText();
     };
 };

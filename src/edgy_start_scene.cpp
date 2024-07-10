@@ -1,11 +1,11 @@
 #include "edgy_start_scene.h"
+#include "edgy_hanamin.h"
 
 namespace edgy
 {
-    int selectedText = 0;
-
-    void start_scene::scene() {
-        
+    const char *start_scene::scene()
+    {
+        return dialog[selectedText];
     };
 
     void start_scene::nextText()
