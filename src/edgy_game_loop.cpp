@@ -12,8 +12,12 @@
 #include "edgy_hanamin.h"
 #include "edgy_background.h"
 #include "edgy_sprite.h"
+#include "edgy_matt.h"
+#include "edgy_pozo.h"
+
 #include "edgy_visual.h"
 #include "edgy_start_scene.h"
+#include "bn_display.h"
 
 namespace edgy
 {
@@ -26,10 +30,19 @@ namespace edgy
 
     void game_loop::loop()
     {
+        int displayWidth = bn::display::width();
+        int displayHeight = bn::display::height();
         edgy::hanamin hanamin;
         edgy::start_scene start_scene;
+
+        // How to put in the left side ?.
+        int sprite_left_site = -100;
+        int sprite_right_site = 100;
+
         bn::regular_bg_ptr regular_bg = bn::regular_bg_items::background.create_bg(0, 20);
-        bn::sprite_ptr sprite_palette = bn::sprite_items::sprite.create_sprite(0, 0);
+        bn::sprite_ptr sprite_palette_left_site = bn::sprite_items::matt.create_sprite(sprite_right_site, 20);
+        bn::sprite_ptr sprite_palette_right_site = bn::sprite_items::pozo.create_sprite(sprite_left_site, 20);
+
         int count = 0;
         while (true)
         {
