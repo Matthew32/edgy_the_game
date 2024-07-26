@@ -12,7 +12,7 @@
 #include "source_han_serif_jp_sprite_font.h"
 #include "bn_rect.h"
 #include "edgy_hanamin.h"
-#include "edgy_background.h"
+#include "edgy_background_title_1.h"
 
 namespace edgy
 {
