@@ -10,7 +10,6 @@
 
 #include "hanamin_sprite_font.h"
 #include "source_han_serif_jp_sprite_font.h"
-#include "edgy_sleep_per_seconds.h"
 #include "cstring"
 
 namespace edgy
@@ -19,7 +18,6 @@ namespace edgy
     {
         bn::sprite_text_generator text_generator(hanamin_sprite_font);
         text_generator.set_center_alignment();
-        edgy::sleep_per_seconds sleep_per_seconds;
         bn::vector<bn::sprite_ptr, 128> text_sprites;
 
         text_generator.generate(0, 72, text, text_sprites);

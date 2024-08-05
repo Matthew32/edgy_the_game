@@ -1,19 +1,12 @@
 #include "edgy_start_scene.h"
-#include "edgy_hanamin.h"
-
 namespace edgy
 {
-    const char *start_scene::scene()
+    visual_scene start_scene::get_visual_novel()
     {
-        return dialog[selectedText];
-    };
+        visual_scene visual_scene;
 
-    void start_scene::nextText()
-    {
-        selectedText++;
+        *visual_scene.dialog = *dialog;
+
+        return visual_scene;
     }
-    bool start_scene::isNextTextEmpty()
-    {
-        return selectedText >= sizeof(dialog);
-    }
-};
+}

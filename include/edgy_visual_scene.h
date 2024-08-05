@@ -1,14 +1,17 @@
-#ifndef EDGY_SCENE_H
-#define EDGY_SCENE_H
+#ifndef EDGY_VISUAL_SCENE_H
+#define EDGY_VISUAL_SCENE_H
 #include "edgy_hanamin.h"
+#include "edgy_entity_text.h"
 namespace edgy
 {
     class visual_scene
     {
-    public:
-        int selectedText = 0;
+    protected:
+        int selected_text = 1;
 
-        const char *scene();
+    public:
+        entity_text dialog[];
+        char* scene();
         void nextText();
         bool isNextTextEmpty();
     };

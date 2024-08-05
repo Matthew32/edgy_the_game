@@ -1,19 +1,14 @@
 #include "edgy_phase1_scene.h"
-#include "edgy_hanamin.h"
-
+#include "edgy_visual_scene.h"
+#include "edgy_entity_text.h"
 namespace edgy
 {
-    const char *phase1_scene::scene()
+    visual_scene phase1_scene::get_visual_novel()
     {
-        return dialog[selectedText];
-    };
+        visual_scene visual_scene;
 
-    void phase1_scene::nextText()
-    {
-        selectedText++;
+        *visual_scene.dialog = *dialog;
+
+        return visual_scene;
     }
-    bool phase1_scene::isNextTextEmpty()
-    {
-        return selectedText >= sizeof(dialog);
-    }
-};
+}
