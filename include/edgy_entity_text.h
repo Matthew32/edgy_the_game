@@ -6,16 +6,14 @@ namespace edgy
     class entity_text
     {
     private:
-        char *name;
         char *text;
         char *sprite;
         char *background;
         char *music;
 
     public:
-        entity_text(char *name, char *text, char *sprite, char *background, char *music)
+        entity_text(char *text, char *sprite, char *background, char *music)
         {
-            this->name = name;
             this->text = text;
             this->sprite = sprite;
             this->background = background;

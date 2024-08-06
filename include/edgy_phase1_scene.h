@@ -9,19 +9,19 @@ namespace edgy
     {
     private:
         edgy::entity_text dialog[13] = {
-            edgy::entity_text("Captain", "We are here for the stamp", "", "", ""),
-            edgy::entity_text("Captain", "What are you talking about?", "", "", ""),
-            edgy::entity_text("Guardian", "A Stamp?", "", "", ""),
-            edgy::entity_text("Captain", "What is that? is good?", "", "", ""),
-            edgy::entity_text("Guardian", "You mean the pau of chocolait", "", "", ""),
-            edgy::entity_text("Captain", "What is that? is good?", "", "", ""),
-            edgy::entity_text("Guardian", "Of course!", "", "", ""),
-            edgy::entity_text("Guardian", "Just look at my fist...", "", "", ""),
-            edgy::entity_text("Guardian", "in you're face!", "", "", ""),
-            edgy::entity_text("Narrator", "The guardian throws a punch with a stamp", "", "", ""),
-            edgy::entity_text("Narrator", "to the captain face", "", "", ""),
-            edgy::entity_text("Narrator", "Now the pirates of bakery", "", "", ""),
-            edgy::entity_text("Narrator", "had one of the stamps in their hands.", "", "", "")};
+            edgy::entity_text("We are here for the stamp", "", "", ""),
+            edgy::entity_text("What are you talking about?", "", "", ""),
+            edgy::entity_text("A Stamp?", "", "", ""),
+            edgy::entity_text("What is that? is good?", "", "", ""),
+            edgy::entity_text("You mean the pau of chocolait", "", "", ""),
+            edgy::entity_text("What is that? is good?", "", "", ""),
+            edgy::entity_text("Of course!", "", "", ""),
+            edgy::entity_text("Just look at my fist...", "", "", ""),
+            edgy::entity_text("in you're face!", "", "", ""),
+            edgy::entity_text("The guardian throws a punch with a stamp", "", "", ""),
+            edgy::entity_text("to the captain face", "", "", ""),
+            edgy::entity_text("Now the pirates of bakery", "", "", ""),
+            edgy::entity_text("had one of the stamps in their hands.", "", "", "")};
 
     public:
         phase1_scene()

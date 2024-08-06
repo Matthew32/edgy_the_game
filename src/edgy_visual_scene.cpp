@@ -4,7 +4,8 @@ namespace edgy
 {
     char *visual_scene::scene()
     {
-        return dialog[selected_text].get_text();
+        char *test = "test";
+        return dialog[selected_text].get_text() ? dialog[selected_text].get_text() : test;
     };
 
     void visual_scene::nextText()
@@ -13,6 +14,6 @@ namespace edgy
     }
     bool visual_scene::isNextTextEmpty()
     {
-       return dialog[selected_text].get_text() == "";
+        return dialog[selected_text].get_text() == "";
     }
 }

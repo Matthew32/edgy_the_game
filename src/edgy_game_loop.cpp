@@ -40,12 +40,13 @@ namespace edgy
         bn::regular_bg_ptr regular_bg = bn::regular_bg_items::background_title_1.create_bg(0, 20);
         // bn::sprite_ptr sprite_palette_left_site = bn::sprite_items::matt.create_sprite(sprite_right_site, 20);
         // bn::sprite_ptr sprite_palette_right_site = bn::sprite_items::pozo.create_sprite(sprite_left_site, 20);
+        start_scene_factory.start_audio();
         while (true)
         {
-            //if (!start_scene.isNextTextEmpty())
-            //{
+            // if (!start_scene.isNextTextEmpty())
+            //  {
             hanamin.text_scene(start_scene.scene());
-            //    start_scene.nextText();
+            start_scene.nextText();
             //}
             //  Draw a filled rectangle at position (10, 20) with size (50, 30) and color (255, 255, 0)
             //  bn::rect(10, 20, 50, 30).draw(bn::color(255, 255, 0));

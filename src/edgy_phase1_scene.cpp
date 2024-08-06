@@ -6,8 +6,7 @@ namespace edgy
     visual_scene phase1_scene::get_visual_novel()
     {
         visual_scene visual_scene;
-
-        *visual_scene.dialog = *dialog;
+        visual_scene.dialog[0] = dialog[0];
 
         return visual_scene;
     }

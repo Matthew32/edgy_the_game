@@ -7,10 +7,10 @@ namespace edgy
     class visual_scene
     {
     protected:
-        int selected_text = 1;
+        int selected_text = 0;
 
     public:
-        entity_text dialog[];
+        entity_text dialog[37] = {};
         char* scene();
         void nextText();
         bool isNextTextEmpty();
