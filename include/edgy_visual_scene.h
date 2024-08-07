@@ -12,8 +12,9 @@ namespace edgy
     public:
         entity_text dialog[37] = {};
         char* scene();
-        void nextText();
-        bool isNextTextEmpty();
+        char* get_background();
+        void next_text();
+        bool is_next_text_empty();
     };
 };
 #endif

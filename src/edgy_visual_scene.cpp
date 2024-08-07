@@ -1,19 +1,24 @@
 #include "edgy_visual_scene.h"
+#include "edgy_background_selector.h"
 #include <iostream>
 namespace edgy
 {
     char *visual_scene::scene()
     {
-        char *test = "test";
-        return dialog[selected_text].get_text() ? dialog[selected_text].get_text() : test;
+        return dialog[selected_text].get_text();
     };
-
-    void visual_scene::nextText()
+    char* visual_scene::get_background()
+    {
+        return dialog[selected_text].get_background();
+    }
+    void visual_scene::next_text()
     {
         selected_text++;
     }
-    bool visual_scene::isNextTextEmpty()
+    bool visual_scene::is_next_text_empty()
     {
-        return dialog[selected_text].get_text() == "";
+        const char *empty = dialog[selected_text].get_text() ? dialog[selected_text].get_text() : "empty";
+
+        return empty == "empty";
     }
 }
