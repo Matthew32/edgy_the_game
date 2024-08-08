@@ -13,6 +13,8 @@
 #include "edgy_sprite.h"
 #include "edgy_matt.h"
 #include "edgy_pozo.h"
+#include "edgy_phase4_scene.h"
+#include "edgy_phase3_scene.h"
 #include "edgy_phase2_scene.h"
 #include "edgy_phase1_scene.h"
 #include "edgy_start_scene.h"
@@ -22,6 +24,8 @@
 #include "bn_regular_bg_items_background_title_1.h"
 #include "bn_regular_bg_items_background_phase_1.h"
 #include "bn_regular_bg_items_background_phase_2.h"
+#include "bn_regular_bg_items_background_phase_3.h"
+#include "bn_regular_bg_items_background_phase_4.h"
 namespace edgy
 {
     void game_loop::start()
@@ -46,10 +50,14 @@ namespace edgy
         edgy::start_scene start_scene_factory;
         edgy::phase1_scene phase1_scene_factory;
         edgy::phase2_scene phase2_scene_factory;
+        edgy::phase3_scene phase3_scene_factory;
+        edgy::phase4_scene phase4_scene_factory;
 
         visual_scene start_scene = start_scene_factory.get_visual_novel();
         visual_scene phase1_scene = phase1_scene_factory.get_visual_novel();
         visual_scene phase2_scene = phase2_scene_factory.get_visual_novel();
+        visual_scene phase3_scene = phase3_scene_factory.get_visual_novel();
+        visual_scene phase4_scene = phase4_scene_factory.get_visual_novel();
 
         // How to put in the left side ?.
         int sprite_left_site = -100;
@@ -107,7 +115,36 @@ namespace edgy
                     regular_bg.reset();
                 }
             }
-
+            if (start_scene.is_next_text_empty() && phase1_scene.is_next_text_empty() && phase2_scene.is_next_text_empty() && !phase3_scene.is_next_text_empty())
+            {
+                if (!background_set_up)
+                {
+                    regular_bg = bn::regular_bg_items::background_phase_3.create_bg(0, 20);
+                    background_set_up = true;
+                }
+                hanamin.text_scene(phase3_scene.scene());
+                phase3_scene.next_text();
+                if (phase3_scene.is_next_text_empty())
+                {
+                    background_set_up = false;
+                    regular_bg.reset();
+                }
+            }
+            if (start_scene.is_next_text_empty() && phase1_scene.is_next_text_empty() && phase2_scene.is_next_text_empty() && phase3_scene.is_next_text_empty() && !phase4_scene.is_next_text_empty())
+            {
+                if (!background_set_up)
+                {
+                    regular_bg = bn::regular_bg_items::background_phase_4.create_bg(0, 20);
+                    background_set_up = true;
+                }
+                hanamin.text_scene(phase4_scene.scene());
+                phase4_scene.next_text();
+                if (phase4_scene.is_next_text_empty())
+                {
+                    background_set_up = false;
+                    regular_bg.reset();
+                }
+            }
             //  Draw a filled rectangle at position (10, 20) with size (50, 30) and color (255, 255, 0)
             //  bn::rect(10, 20, 50, 30).draw(bn::color(255, 255, 0));
             bn::core::update();
