@@ -7,7 +7,7 @@ namespace edgy
     {
         return dialog[selected_text].get_text();
     };
-    char* visual_scene::get_background()
+    char *visual_scene::get_background()
     {
         return dialog[selected_text].get_background();
     }
@@ -20,5 +20,9 @@ namespace edgy
         const char *empty = dialog[selected_text].get_text() ? dialog[selected_text].get_text() : "empty";
 
         return empty == "empty";
+    }
+    char *visual_scene::get_sprite()
+    {
+        return dialog[selected_text].get_sprite();
     }
 }

@@ -11,7 +11,7 @@
 #include "bn_rect.h"
 #include "edgy_hanamin.h"
 #include "edgy_sprite.h"
-#include "edgy_matt.h"
+#include "edgy_captain.h"
 #include "edgy_pozo.h"
 #include "edgy_phase4_scene.h"
 #include "edgy_phase3_scene.h"
@@ -63,19 +63,32 @@ namespace edgy
         int sprite_left_site = -100;
         int sprite_right_site = 100;
         // bn::regular_bg_ptr regular_bg = bn::regular_bg_items::background_title_1.create_bg(0, 20);
-        //  bn::sprite_ptr sprite_palette_left_site = bn::sprite_items::matt.create_sprite(sprite_right_site, 20);
         //  bn::sprite_ptr sprite_palette_right_site = bn::sprite_items::pozo.create_sprite(sprite_left_site, 20);
-        start_scene_factory.start_audio();
         bool background_set_up = false;
         bn::optional<bn::regular_bg_ptr> regular_bg;
+        bn::sprite_ptr sprite = bn::sprite_items::captain.create_sprite(0, 0);
+
         while (true)
         {
             if (!start_scene.is_next_text_empty())
             {
+                if (start_scene.get_sprite() == "captain")
+                {
+                    bn::sprite_ptr sprite = bn::sprite_items::captain.create_sprite(0, 0);
+                }
+                if (start_scene.get_sprite() == "sailor_n")
+                {
+                    bn::sprite_ptr sprite = bn::sprite_items::captain.create_sprite(0, 0);
+                }
+                if (start_scene.get_sprite() == "sailor_r")
+                {
+                    bn::sprite_ptr sprite = bn::sprite_items::captain.create_sprite(0, 0);
+                }
                 if (!background_set_up)
                 {
                     regular_bg = bn::regular_bg_items::background_title_1.create_bg(0, 20);
                     background_set_up = true;
+                    start_scene_factory.start_audio();
                 }
                 hanamin.text_scene(start_scene.scene());
                 start_scene.next_text();
@@ -150,5 +163,6 @@ namespace edgy
             bn::core::update();
         }
     };
-
+    void game_loop::instance_captain() {
+    };
 };

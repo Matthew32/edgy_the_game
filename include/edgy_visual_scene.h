@@ -15,6 +15,7 @@ namespace edgy
         char* get_background();
         void next_text();
         bool is_next_text_empty();
+        char* get_sprite();
     };
 };
 #endif

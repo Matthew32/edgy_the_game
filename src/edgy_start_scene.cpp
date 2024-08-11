@@ -5,8 +5,8 @@
 namespace edgy
 {
     entity_text dialog[37] = {
-        edgy::entity_text("In a world where pirates", "", "background_title_1", ""),
-        edgy::entity_text("go in the seas to find", "", "", ""),
+        edgy::entity_text("In a world where pirates", "captain", "background_title_1", ""),
+        edgy::entity_text("go in the seas to find", "captain", "", ""),
         edgy::entity_text("the best bread of the world...", "", "", ""),
         edgy::entity_text("Today is the day!", "", "", ""),
         edgy::entity_text("that we are going", "", "", ""),
