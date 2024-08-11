@@ -12,6 +12,7 @@
 #include "edgy_hanamin.h"
 #include "edgy_sprite.h"
 #include "edgy_captain.h"
+#include "edgy_sailor_a.h"
 #include "edgy_pozo.h"
 #include "edgy_phase4_scene.h"
 #include "edgy_phase3_scene.h"
@@ -66,7 +67,6 @@ namespace edgy
         //  bn::sprite_ptr sprite_palette_right_site = bn::sprite_items::pozo.create_sprite(sprite_left_site, 20);
         bool background_set_up = false;
         bn::optional<bn::regular_bg_ptr> regular_bg;
-        bn::sprite_ptr sprite = bn::sprite_items::captain.create_sprite(0, 0);
 
         while (true)
         {
@@ -74,15 +74,28 @@ namespace edgy
             {
                 if (start_scene.get_sprite() == "captain")
                 {
-                    bn::sprite_ptr sprite = bn::sprite_items::captain.create_sprite(0, 0);
+                    regular_bg.reset();
+                    regular_bg = bn::regular_bg_items::captain.create_bg(0, 0);
+                }
+                if (start_scene.get_sprite() == "sailor_a")
+                {
+                    regular_bg.reset();
+                    regular_bg = bn::regular_bg_items::sailor_a.create_bg(0, 0);
                 }
                 if (start_scene.get_sprite() == "sailor_n")
                 {
-                    bn::sprite_ptr sprite = bn::sprite_items::captain.create_sprite(0, 0);
+                    regular_bg.reset();
+                    regular_bg = bn::regular_bg_items::sailor_a.create_bg(0, 0);
                 }
-                if (start_scene.get_sprite() == "sailor_r")
+                if (start_scene.get_sprite() == "sailor_o")
                 {
-                    bn::sprite_ptr sprite = bn::sprite_items::captain.create_sprite(0, 0);
+                    regular_bg.reset();
+                    regular_bg = bn::regular_bg_items::sailor_a.create_bg(0, 0);
+                }
+                if (start_scene.get_sprite() == "")
+                {
+                    regular_bg.reset();
+                    regular_bg = bn::regular_bg_items::background_title_1.create_bg(0, 0);
                 }
                 if (!background_set_up)
                 {
@@ -90,6 +103,7 @@ namespace edgy
                     background_set_up = true;
                     start_scene_factory.start_audio();
                 }
+
                 hanamin.text_scene(start_scene.scene());
                 start_scene.next_text();
                 if (start_scene.is_next_text_empty())
