@@ -13,6 +13,7 @@
 #include "edgy_sprite.h"
 #include "edgy_captain.h"
 #include "edgy_sailor_a.h"
+#include "edgy_sailor_n.h"
 #include "edgy_pozo.h"
 #include "edgy_phase4_scene.h"
 #include "edgy_phase3_scene.h"
@@ -85,12 +86,7 @@ namespace edgy
                 if (start_scene.get_sprite() == "sailor_n")
                 {
                     regular_bg.reset();
-                    regular_bg = bn::regular_bg_items::sailor_a.create_bg(0, 0);
-                }
-                if (start_scene.get_sprite() == "sailor_o")
-                {
-                    regular_bg.reset();
-                    regular_bg = bn::regular_bg_items::sailor_a.create_bg(0, 0);
+                    regular_bg = bn::regular_bg_items::sailor_n.create_bg(0, 0);
                 }
                 if (start_scene.get_sprite() == "")
                 {

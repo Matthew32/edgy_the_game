@@ -4,7 +4,7 @@
 #include "bn_regular_bg_items_sailor_a.h"
 namespace edgy
 {
-    class sailor_n
+    class sailor_a
     {
     };
 };
