@@ -6,12 +6,12 @@ namespace edgy
     visual_scene phase3_scene::get_visual_novel()
     {
         edgy::entity_text dialog[7] = {
-            edgy::entity_text("Templo 3: develop master", "", "", ""),
-            edgy::entity_text("Parece que no hay nadie!", "captain", "captain", ""),
-            edgy::entity_text("... (grillos sounds)", "", "", ""),
-            edgy::entity_text("chupao!", "captain", "captain", ""),
-            edgy::entity_text("Templo 3: develop master", "", "", ""),
-            edgy::entity_text("Completado!", "", "", "")};
+            edgy::entity_text("Temple 3: Develop Master", "", "", ""),
+            edgy::entity_text("It seems there's no one here!", "captain", "captain", ""),
+            edgy::entity_text("... (cricket sounds)", "", "", ""),
+            edgy::entity_text("Piece of cake!", "captain", "captain", ""),
+            edgy::entity_text("Temple 3: Develop Master", "", "", ""),
+            edgy::entity_text("Completed!", "", "", "")};
 
         visual_scene visual_scene;
         int count = 0;

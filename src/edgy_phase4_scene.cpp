@@ -6,12 +6,12 @@ namespace edgy
     visual_scene phase4_scene::get_visual_novel()
     {
         edgy::entity_text dialog[7] = {
-            edgy::entity_text("Templo 4: osfar maestre", "", "", ""),
-            edgy::entity_text("Perdon el estamp..", "captain", "captain", ""),
-            edgy::entity_text("Coje mi tanga y sal", "", "", ""),
-            edgy::entity_text("Por supuesto jefe!", "captain", "captain", ""),
-            edgy::entity_text("Templo 4: osfar maestre", "", "", ""),
-            edgy::entity_text("completado", "", "", "")};
+            edgy::entity_text("Temple 4: Osfar Master", "", "", ""),
+            edgy::entity_text("Sorry, the print...", "captain", "captain", ""),
+            edgy::entity_text("Grab my thong and leave", "", "", ""),
+            edgy::entity_text("Of course, boss!", "captain", "captain", ""),
+            edgy::entity_text("Temple 4: Osfar Master", "", "", ""),
+            edgy::entity_text("Completed", "", "", "")};
 
         visual_scene visual_scene;
         int count = 0;
