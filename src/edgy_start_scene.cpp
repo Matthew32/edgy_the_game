@@ -4,7 +4,15 @@
 
 namespace edgy
 {
-    entity_text dialog[37] = {
+   
+    void start_scene::start_audio()
+    {
+        bn::music_items::start_scene.play();
+    }
+
+    visual_scene start_scene::get_visual_novel()
+    {
+         entity_text dialog[37] = {
         edgy::entity_text("En un mundo donde...", "", "", ""),
         edgy::entity_text("Las bragas son un tesoro...", "", "", ""),
         edgy::entity_text("Hoy es el dia!", "captain", "captain", ""),
@@ -29,13 +37,6 @@ namespace edgy
         edgy::entity_text("Nuestros heroes piratas...", "", "", ""),
         edgy::entity_text("Empezaron su aventura!", "", "", "")};
 
-    void start_scene::start_audio()
-    {
-        bn::music_items::start_scene.play();
-    }
-
-    visual_scene start_scene::get_visual_novel()
-    {
         visual_scene visual_scene;
         int count = 0;
         for (entity_text entity : dialog)

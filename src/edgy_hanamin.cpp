@@ -22,7 +22,7 @@ namespace edgy
 
         text_generator.generate(0, 72, text, text_sprites);
 
-        while (!bn::keypad::start_pressed())
+        while (!bn::keypad::a_pressed() && !bn::keypad::b_pressed() && !bn::keypad::start_pressed())
         {
             bn::core::update();
         }

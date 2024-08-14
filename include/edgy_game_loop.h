@@ -25,8 +25,7 @@ namespace edgy
 
         void start();
         void loop();
-                void instance_captain();
-
+        void instance_captain();
     };
 };
 #endif
