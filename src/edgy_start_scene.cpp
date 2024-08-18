@@ -7,7 +7,7 @@ namespace edgy
 
     void start_scene::start_audio()
     {
-        bn::music_items::start_scene.play();
+        bn::music_items::menu.play();
     }
 
     visual_scene start_scene::get_visual_novel()
